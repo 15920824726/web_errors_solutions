@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .swiper {
+            position: relative;
+            width: 300px;
+        }
+        .swiper .swiper-container {
+            position: relative;
+            left: -300px;
+            width: 10000%;
+            display: flex;
+            background: red;
+            padding: 15px 0;
+        }
+
+        .swiper .swiper-container .swiper-item {
+            width: 1%;
+            height: 300px;
+            background: #eee;
+
+         /* 下面是为了让大家看的更清楚，加的修饰 */
+            text-align: center;
+            font-size: 40px;
+            color: #fff;
+           }
+    </style>
+</head>
+<body>
+
+<div class="swiper">
+    <!-- 容器 -->
+    <div class="swiper-container">
+        <!-- 滑块 -->
+        <div class="swiper-item" style="background: #000">1</div>
+        <div class="swiper-item" style="background: #4269eb">2</div>
+        <div class="swiper-item" style="background: #247902">3</div>
+    </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

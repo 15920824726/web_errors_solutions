@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>test</p>
+
+<script>
+    async function testAsync() {
+        return 'hello async';
+    }
+    const result = testAsync();
+    console.log(result);
+    testAsync().then(v => {
+        console.log(v);   // 输出 hello async
+    })
+
+</script>
+
+</body>
+</html>

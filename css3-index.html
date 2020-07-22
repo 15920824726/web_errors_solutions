@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        div{
+            background-color: red;
+            width: 50px;
+            height: 50px;
+            color: black;
+        }
+        .translate {
+            transform: translate(500px 0px);
+            -webkit-transform:translate(50px,0px); /* Safari and Chrome */
+        }
+        .rotate {
+            transform: rotate(30deg);
+        }
+        .scale {
+            transform: scale(1,1);
+        }
+        .transition {
+            /*transition: width 2s, height 2s, transform 2s;*/
+            -webkit-transition: width 2s, height 2s, -webkit-transform 2s;
+        }
+        .transition:hover {
+            width: 100px;
+            height: 100px;
+            -webkit-transform: rotate(180deg);
+        }
+        .animation {
+            animation: myfirst 5s;
+        }
+        @keyframes myfirst {
+            0% { background-color: red }
+            25% { background-color: yellow }
+            50% { background-color: blue }
+            100% { background-color: green }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="translate" style="">
+        translate
+    </div>
+    <div class="rotate" style="color: white">
+        rotate
+    </div>
+    <div class="scale">
+        scale
+    </div>
+    <div class="transition">
+        transition
+    </div>
+    <div class="animation">
+        animation
+    </div>
+</body>
+</html>

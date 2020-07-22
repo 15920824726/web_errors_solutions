@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    // 同步回掉
+    function wait(callback) {
+        callback('执行完成')
+    };
+    wait(function (msg) {
+        console.log(msg)
+    });
+    console.log('第二次执行');
+</script>
+</body>
+</html>

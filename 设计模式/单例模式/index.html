@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    /*
+        用法：可以被实例化，且实例化一次。
+        使用场景：
+     */
+    // 1. 单体模式
+    var Singleton = function(name){
+        this.name = name;
+    };
+    Singleton.prototype.getName = function(){
+        return this.name;
+    }
+    // 获取实例对象
+    var getInstance = (function() {
+        console.log('okokok');
+        return function(name) {
+            if(!instance) {
+                instance = new Singleton(name);
+            }
+            return instance;
+        }
+    })();
+    // 测试单体模式的实例
+    var a = getInstance("aa");
+    var b = getInstance("bb");
+
+
+    // 2. 实现单体模式弹窗
+    var createWindow = (function(){
+        var div;
+        return function(){
+            if(!div) {
+                div = document.createElement("div");
+                div.innerHTML = "我是弹窗内容";
+                div.style.display = 'none';
+                document.body.appendChild(div);
+            }
+            return div;
+        }
+    })();
+    document.getElementById("Id").onclick = function(){
+        // 点击后先创建一个div元素
+        var win = createWindow();
+        win.style.display = "block";
+    }
+
+    
+</script>
+
+</body>
+</html>

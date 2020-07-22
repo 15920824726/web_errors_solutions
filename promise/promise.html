@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>test</p>
+<script>
+    import {set} from "../../../../vue-2.6.11/src/core/observer";
+    // promise 3中状态：  pending(进行中) Resolved(已完成) Reject(已失败)
+    // Promise.prototype.then() 状态改变时的回掉函数
+    // Promise.prototype.catch() 用于指定发生错误时的回掉函数
+    // Promise.all() Promise.all方法用于将多个Promise实例，包装成一个新的Promise实例。 var p = Promise.all([p1, p2, p3]);
+    // Promise.resolve()   Promise.resolve('foo') 等价于 new Promise(resolve => resolve('foo'))
+    // Promise.reject()    Promise.reject('出错了'); 等同于 var p = new Promise((resolve, reject) => reject('出错了'))
+    // reject和catch区别：
+    // 1 reject后的东西，一定会进入then中的第二个回调，如果then中没有写第二个回调，则进入catch.
+    // 2 resolve的东西，一定会进入then的第一个回调，肯定不会进入catch
+    // 3 另外，网络异常（比如断网），会直接进入catch而不会进入then的第二个回调
+    function p1Test() {
+        return new Promise(function (resolve) {
+            console.log('p1 resolve');
+            setTimeout(()=>{
+                resolve(100);
+            },100)
+
+        })
+    }
+    function p2Test() {
+        return new Promise(function (resolve) {
+            console.log('p2 resolve');
+            setTimeout(()=>{
+                resolve(50)
+            },50)
+        })
+    }
+    async function test() {
+        const p1 = await p1Test();
+        const p2 = await p2Test();
+        console.log(p1, p2);
+    }
+</script>
+
+</body>
+</html>

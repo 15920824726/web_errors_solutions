@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div class="inner"></div>
+<script >
+
+    function cb(response) {
+        var el = document.querySelector('.inner');
+        el.innerHTML = response;
+    }
+
+    var script = document.createElement('script');
+    // 指定回调函数的名字为 handleResponse
+    script.src = 'http://localhost:8888?jsonpCallback=cb';
+    document.body.insertBefore(script, document.body.firstChild);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="div" style="height: 100px;background: grey;width: 100px">test</div>
+
+<ul>
+    <li class="one">1</li>
+    <li class="two">2</li>
+    <li class="three">3</li>
+    <li class="four">4</li>
+</ul>
+
+
+<script>
+    // 事件委托 https://www.cnblogs.com/yxqd/p/10369392.html
+
+    // element.addEventListener(event,function,useCapture)
+    // useCapture:
+    //     可选。布尔值，指定事件是否在捕获或冒泡阶段执行。 
+    //      可能值:
+    //     * true - 事件句柄在捕获阶段执行
+    //     * false- false- 默认。事件句柄在冒泡阶段执行
+
+    // var oDiv = document.querySelector('#div');
+    // oDiv.addEventListener('click',function(){
+    //     console.log('div')
+    // });
+    // document.body.addEventListener('click',function(){
+    //     console.log('body')
+    // });
+    // var oDiv = document.querySelector('div');
+    // oDiv.addEventListener('click',function(){
+    //     console.log('div')
+    // },false);
+    // document.body.addEventListener('click',function(){
+    //     console.log('body')
+    // },false);
+    var oDiv = document.querySelector('#div');
+    oDiv.addEventListener('click',function(){
+        console.log('div')
+    },true);
+    document.body.addEventListener('click',function(){
+        console.log('body')
+    },true);
+
+    document.querySelector('ul').addEventListener('click', function (ev) {
+        var ev =ev || window.event;
+        console.log(ev)
+        var target = ev.target || ev.srcElement;
+        console.log(target.classList);
+        if(target.classList[0] === 'one') {
+            alert(1)
+        }
+
+    })
+
+</script>
+
+</body>
+</html>

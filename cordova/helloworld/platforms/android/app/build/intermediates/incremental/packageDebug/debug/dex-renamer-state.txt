@@ -1,0 +1,4 @@
+#Thu Jul 16 19:25:52 CST 2020
+base.0=/Users/luxintao/Desktop/edwin/vueDemo/test1/axios/前端常见问题及解决方案/cordova/helloworld/platforms/android/app/build/intermediates/transforms/dexMerger/debug/0
+path.0=classes.dex
+renamed.0=classes.dex
